@@ -47,12 +47,12 @@ function App(): JSX.Element {
             <Stack.Screen
               name="Allmeme"
               component={AllMemes}
-              options={{headerShown: false}}
+              //options={{headerShown: false}}
             />
             <Stack.Screen
               name="meme"
               component={Meme}
-              options={{headerShown: false}}
+             // options={{headerShown: false}}
             />
            
           </Stack.Navigator>
