@@ -18,15 +18,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {PaperProvider} from 'react-native-paper';
-import {UserLogin} from './src/screens/UserLogin';
-import {AppNavigator} from './src/navigation/AppNavigator';
-import {PersonalDetails} from './src/screens/PersonalDeatils';
-import {ExtraDetails} from './src/screens/ExtraDetails';
-import UserProvider from './src/context/UserProvider';
+
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { AllMemes } from './src/screens/AllMeme';
+import Meme from './src/screens/Meme';
+import { PaperProvider } from 'react-native-paper';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -42,29 +40,25 @@ function App(): JSX.Element {
   };
 
   return (
-    <UserProvider>
+    
       <NavigationContainer>
         <PaperProvider>
-          <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator initialRouteName="Allmeme">
             <Stack.Screen
-              name="Login"
-              component={UserLogin}
+              name="Allmeme"
+              component={AllMemes}
               options={{headerShown: false}}
             />
             <Stack.Screen
-              name="Personal"
-              component={PersonalDetails}
+              name="meme"
+              component={Meme}
               options={{headerShown: false}}
             />
-            <Stack.Screen
-              name="Extra"
-              component={ExtraDetails}
-              options={{headerShown: false}}
-            />
+           
           </Stack.Navigator>
         </PaperProvider>
       </NavigationContainer>
-    </UserProvider>
+   
   );
 }
 
