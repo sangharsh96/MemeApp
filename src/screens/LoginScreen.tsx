@@ -1,4 +1,4 @@
-// screens/LoginScreen.tsx
+
 
 import React, {useState} from 'react';
 import {View, TextInput, Button} from 'react-native';
@@ -14,9 +14,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    // Perform custom login logic
-
-    // Retrieve user data from local storage
+   
    
     
     const storedUserData = await AsyncStorage.getItem('userData');
@@ -29,10 +27,10 @@ const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
       userData.username === username &&
       userData.password === password
     ) {
-      // Navigate to Profile screen
+     
       navigation.navigate('Profile');
     } else {
-      // Handle invalid login
+    
     }
   };
 
